@@ -7,34 +7,57 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #250c25;
+  background-color: #300f3d;
+  min-height: 100vh; /* Garante que o body ocupa a altura total da tela */
+  display: flex; /* Permite usar flexbox para centralizar o container */
+  justify-content: center; /* Centraliza horizontalmente o container */
+  align-items: flex-start; /* Alinha o container no topo, ou center para centralizar verticalmente tudo */
 }
 
 .container {
   width: 90%;
   max-width: 1200px;
-  margin: 40px auto;
+  margin: 40px 0; /* Ajustamos a margem vertical para que não influencie o justify-content */
   padding: 20px;
+  text-align: center; /* Centraliza o texto do header */
 }
 
 header {
-  text-align: center;
   margin-bottom: 50px;
 }
 
 header h1 {
   font-size: 2.8rem;
-  color: #e0d7d7;
+  color: #e2d7d7;
 }
 
 header p {
-  color: #dacbcb;
+  color: #c2bbbb;
   font-size: 1.1rem;
 }
 
 .card-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+  gap: 20px; /* Espaçamento entre os cards */
+  justify-content: center; /* CENTRALIZA OS CARDS dentro do card-list */
+  align-items: flex-start; /* Alinha os cards pelo topo */
+}
+
+/* Opcional: Adicionar um media query para telas menores */
+@media (max-width: 768px) {
+  .container {
+    margin: 20px 0;
+    padding: 10px;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+  header p {
+    font-size: 0.9rem;
+  }
+  .card {
+    width: 90%; /* Cards ocupam mais espaço em telas menores */
+    max-width: 300px; /* Limita o tamanho máximo mesmo em 90% */
+  }
 }
